@@ -11,6 +11,7 @@
     <PackageReference Include="ProjectDefaults" Version="1.0.68" PrivateAssets="all" />
     <ProjectReference Include="..\Verify.Xunit\Verify.Xunit.csproj" />
     <ProjectReference Include="..\Verify\Verify.csproj" />
+    <PackageReference Include="Meziantou.Xunit.ParallelTestFramework" Version="1.0.0" />
   </ItemGroup>
   <Import Project="$(ProjectDir)..\Verify\buildTransitive\Verify.props" />
   <Import Project="$(ProjectDir)..\Verify\buildTransitive\Verify.targets" />
