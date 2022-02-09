@@ -23,7 +23,7 @@ public class FileComparerTests
         var path = "lock.txt";
         try
         {
-            File.WriteAllText(path, "");
+            File.WriteAllText(path, "content");
             await VerifyFile(path);
             Assert.False(FileEx.IsFileLocked(path));
         }
