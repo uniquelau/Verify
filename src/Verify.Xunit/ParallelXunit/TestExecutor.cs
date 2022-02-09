@@ -17,11 +17,13 @@
     // By providing a unique test collection instance to every test case in a test class you can make them all run in parallel.
     IXunitTestCase DeriveTestCase(IXunitTestCase test)
     {
-        if (test.IsSerial() ||
+        if (test.Method.ReturnType.Name=="System.Void" ||
+            test.IsSerial() ||
             test.IsExplicitCollection())
         {
             return test;
         }
+
 
         return DuplicateTest(test);
     }
