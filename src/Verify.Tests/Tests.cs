@@ -535,16 +535,15 @@ public class Tests
 #endif
 
     [Fact]
-    public async Task VerifyFilePath()
+    public Task VerifyFilePath()
     {
-        await VerifyFile("sample.txt");
-        Assert.False(FileEx.IsFileLocked("sample.txt"));
+        return VerifyFile("sample.txt");
     }
 
     [Fact]
-    public async Task VerifyFileWithAppend()
+    public Task VerifyFileWithAppend()
     {
-        await VerifyFile("sample.txt")
+        return VerifyFile("sample.txt")
             .AppendValue("key", "value");
     }
 

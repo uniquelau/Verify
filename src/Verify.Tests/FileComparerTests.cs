@@ -1,4 +1,6 @@
-﻿public class FileComparerTests
+﻿[Serial]
+[UsesVerify]
+public class FileComparerTests
 {
     [Fact]
     public async Task BinaryEquals()
@@ -12,6 +14,22 @@
         finally
         {
             File.Delete("sample.tmp");
+        }
+    }
+
+    [Fact]
+    public async Task VerifyFilePath()
+    {
+        var path = "lock.txt";
+        try
+        {
+            File.WriteAllText(path, "");
+            await VerifyFile(path);
+            Assert.False(FileEx.IsFileLocked(path));
+        }
+        finally
+        {
+            File.Delete(path);
         }
     }
 

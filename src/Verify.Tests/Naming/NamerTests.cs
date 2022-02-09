@@ -1,4 +1,5 @@
 ﻿[UsesVerify]
+[Serial]
 public class NamerTests
 {
 #if NET6_0 && DEBUG

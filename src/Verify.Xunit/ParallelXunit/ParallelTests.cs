@@ -1,6 +1,6 @@
 ﻿namespace VerifyXunit;
 
-public sealed class ParallelTests :
+public class ParallelTests :
     XunitTestFramework
 {
     public ParallelTests(IMessageSink diagnosticMessageSink)
@@ -10,6 +10,6 @@ public sealed class ParallelTests :
 
     protected override ITestFrameworkExecutor CreateExecutor(AssemblyName assemblyName)
     {
-        return new CustomTestExecutor(assemblyName, SourceInformationProvider, DiagnosticMessageSink);
+        return new TestExecutor(assemblyName, SourceInformationProvider, DiagnosticMessageSink);
     }
 }
