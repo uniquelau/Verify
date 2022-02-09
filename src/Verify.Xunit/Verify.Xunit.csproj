@@ -9,6 +9,7 @@
     <Using Remove="System.Net.Http" />
     <Using Include="Xunit" />
     <Using Include="Xunit.Sdk" />
+    <Using Include="Xunit.Abstractions" />
     <Using Include="VerifyTests" />
     <Using Include="Newtonsoft.Json.Linq" />
     <PackageReference Include="xunit.assert" Version="2.4.1" />

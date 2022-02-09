@@ -1,0 +1,1 @@
+﻿[assembly: TestFramework("VerifyXunit.ParallelTests", "Verify.Xunit")]
