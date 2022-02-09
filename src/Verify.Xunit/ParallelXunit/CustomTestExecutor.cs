@@ -26,7 +26,8 @@
             var oldTestCollection = oldTestMethod.TestClass.TestCollection;
 
             // If the collection is explicitly set, don't try to parallelize test execution
-            if (oldTestCollection.CollectionDefinition != null || oldTestClass.Class.GetCustomAttributes(typeof(CollectionAttribute)).Any())
+            if (oldTestCollection.CollectionDefinition != null ||
+                oldTestClass.Class.GetCustomAttributes(typeof(CollectionAttribute)).Any())
             {
                 result.Add(testCase);
                 continue;
