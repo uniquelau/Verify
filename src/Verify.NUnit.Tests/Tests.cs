@@ -21,10 +21,6 @@ public class Tests
     public Task ManyTestCases(int testCase)
     {
         var result = testCase * 2;
-        return Verify(result)
-            .UseParameters(testCase)
-            .UseDirectory("snaps")
-            .AutoVerify()
-            .DisableDiff();
+        return Verify(result);
     }
 }
