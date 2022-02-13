@@ -8,7 +8,8 @@
             await FileHelpers.WriteText(filePair.ReceivedPath, receivedText);
             return new EqualityResult(Equality.New, null, receivedText, null);
         }
-        
+        //var verifiedBuilder = await FileHelpers.ReadStringBuilder(filePair.VerifiedPath);
+        //var verifiedText = verifiedBuilder.ToString();
         var verifiedText = await FileCache.Get(filePair.VerifiedPath);
         var result = await CompareStrings(filePair.Extension, receivedText, verifiedText, settings);
         if (result.IsEqual)

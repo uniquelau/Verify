@@ -6,11 +6,9 @@
     {
         if (cache.TryGetValue(path, out var value))
         {
-            Debug.WriteLine("hit");
             return Task.FromResult(value);
         }
-
-        Debug.WriteLine("mis");
+        
         cache[path] = "";
         return Read(path);
     }

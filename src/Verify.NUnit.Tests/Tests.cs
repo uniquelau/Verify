@@ -15,12 +15,11 @@ public class Tests
             .UseTextForParameters("TextForParameter");
     }
 
-    static IEnumerable<int> testCases = Enumerable.Range(0, 3600);
+    static IEnumerable<int> testCases = Enumerable.Range(0, 10000);
 
     [TestCaseSource(nameof(testCases))]
     public Task ManyTestCases(int testCase)
     {
-        var result = testCase * 2;
-        return Verify(result);
+        return Verify(testCase);
     }
 }
