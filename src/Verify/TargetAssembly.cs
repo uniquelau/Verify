@@ -13,6 +13,9 @@
 
         Namer.UseAssembly(assembly);
         ProjectDir = AttributeReader.GetProjectDirectory(assembly);
+#pragma warning disable CS4014
+        FileCache.Init(ProjectDir);
+#pragma warning restore CS4014
         AttributeReader.TryGetSolutionDirectory(assembly, out var solutionDir);
         SolutionDir  = solutionDir;
         ApplyScrubbers.UseAssembly(solutionDir, ProjectDir);
